@@ -5,7 +5,7 @@ import Pagination from "@/components/article/Pagination";
 import { Article } from "../generated/prisma/client";
 import { getArticles } from "@/apiCalls/articleApiCall";
 import { getArticlesCount } from "@/apiCalls/articleApiCall";
-import { pageSize } from "@/utils/constants";
+import { DOMAIN, pageSize } from "@/utils/constants";
 // --------------------------------------------------------
 interface ArticlePageProps {
   searchParams: Promise<{ pageNumber: string }>;
@@ -30,7 +30,7 @@ const Articles = async ({ searchParams }: ArticlePageProps) => {
       </div>
       <Pagination
         pageNumber={Number(pageNumber)}
-        route="http://localhost:3000/articles"
+        route={`${DOMAIN}/articles`}
         pages={pages}
       />
     </section>
