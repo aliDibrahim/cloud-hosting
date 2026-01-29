@@ -1,0 +1,27 @@
+@import "tailwindcss";
+
+:root {
+  --bg-color: #ffffff;
+}
+
+
+body {
+  background-color: var(--bg-color);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.fix-height {
+  min-height: calc(100vh - 125px);
+}
+
+
+input::placeholder {
+  transition-duration: 0.3s;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+}
